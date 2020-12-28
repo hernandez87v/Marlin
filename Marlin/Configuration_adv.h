@@ -21,6 +21,8 @@
  */
 #pragma once
 
+#define CONFIG_EXAMPLES_DIR "Creality/Ender-3 V2"
+
 /**
  * Configuration_adv.h
  *
@@ -801,10 +803,10 @@
 //#define ASSISTED_TRAMMING
 #if ENABLED(ASSISTED_TRAMMING)
 
-  // Define positions for probe points.
-  #define TRAMMING_POINT_XY { {  20, 20 }, { 180,  20 }, { 180, 180 }, { 20, 180 } }
+  // Define positions for probing points, use the hotend as reference not the sensor.
+  #define TRAMMING_POINT_XY { {  20, 20 }, { 200,  20 }, { 200, 200 }, { 20, 200 } }
 
-  // Define position names for probe points.
+  // Define positions names for probing points.
   #define TRAMMING_POINT_NAME_1 "Front-Left"
   #define TRAMMING_POINT_NAME_2 "Front-Right"
   #define TRAMMING_POINT_NAME_3 "Back-Right"
@@ -3032,10 +3034,6 @@
     #define SPEED_POWER_MIN               0    // (%) 0-100
     #define SPEED_POWER_MAX             100    // (%) 0-100
     #define SPEED_POWER_STARTUP          80    // (%) M3/M4 speed/power default (with no arguments)
-
-    // Define the minimum and maximum test pulse time values for a laser test fire function
-    #define LASER_TEST_PULSE_MIN           1   // Used with Laser Control Menu
-    #define LASER_TEST_PULSE_MAX         999   // Caution: Menu may not show more than 3 characters
 
     /**
      * Enable inline laser power to be handled in the planner / stepper routines.
