@@ -92,7 +92,7 @@
   #define CORP_WEBSITE_C "www.cxsw3d.com"
 #endif
 #ifndef CORP_WEBSITE_E
-  #define CORP_WEBSITE_E "www.creality.com"
+  #define CORP_WEBSITE_E "www.vladhernandez.dev"
 #endif
 
 #define PAUSE_HEAT
