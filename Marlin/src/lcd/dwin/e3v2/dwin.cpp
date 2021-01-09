@@ -92,7 +92,7 @@
   #define CORP_WEBSITE_C "www.cxsw3d.com"
 #endif
 #ifndef CORP_WEBSITE_E
-  #define CORP_WEBSITE_E "www.vladhernandez.dev"
+  #define CORP_WEBSITE_E "instagram: vancity.exe"
 #endif
 
 #define PAUSE_HEAT
