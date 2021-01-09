@@ -25,7 +25,7 @@
  * Release version. Leave the Marlin version or apply a custom scheme.
  */
 #ifndef SHORT_BUILD_VERSION
-  #define SHORT_BUILD_VERSION "vancity.exe-2.0.7.2"
+  #define SHORT_BUILD_VERSION "vancity.exe-2.0.7.x"
 #endif
 
 /**
