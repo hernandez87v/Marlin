@@ -808,10 +808,10 @@
 //#define ASSISTED_TRAMMING
 #if ENABLED(ASSISTED_TRAMMING)
 
-  // Define positions for probing points, use the hotend as reference not the sensor.
-  #define TRAMMING_POINT_XY { {  20, 20 }, { 200,  20 }, { 200, 200 }, { 20, 200 } }
+  // Define positions for probe points.
+  #define TRAMMING_POINT_XY { {  20, 20 }, { 180,  20 }, { 180, 180 }, { 20, 180 } }
 
-  // Define positions names for probing points.
+  // Define position names for probe points.
   #define TRAMMING_POINT_NAME_1 "Front-Left"
   #define TRAMMING_POINT_NAME_2 "Front-Right"
   #define TRAMMING_POINT_NAME_3 "Back-Right"
@@ -1160,7 +1160,7 @@
   //#define LCD_DECIMAL_SMALL_XY
 
   // Add an 'M73' G-code to set the current percentage
-  //#define LCD_SET_PROGRESS_MANUALLY
+  #define LCD_SET_PROGRESS_MANUALLY
 
   // Show the E position (filament used) during printing
   //#define LCD_SHOW_E_TOTAL
@@ -2091,7 +2091,7 @@
    * Retract and prime filament on tool-change to reduce
    * ooze and stringing and to get cleaner transitions.
    */
-  //#define TOOLCHANGE_FILAMENT_SWAP
+#define TOOLCHANGE_FILAMENT_SWAP
   #if ENABLED(TOOLCHANGE_FILAMENT_SWAP)
     // Load / Unload
     #define TOOLCHANGE_FS_LENGTH              12  // (mm) Load / Unload length
@@ -2135,7 +2135,7 @@
    * Position to park head during tool change.
    * Doesn't apply to SWITCHING_TOOLHEAD, DUAL_X_CARRIAGE, or PARKING_EXTRUDER
    */
-  //#define TOOLCHANGE_PARK
+#define TOOLCHANGE_PARK
   #if ENABLED(TOOLCHANGE_PARK)
     #define TOOLCHANGE_PARK_XY    { X_MIN_POS + 10, Y_MIN_POS + 10 }
     #define TOOLCHANGE_PARK_XY_FEEDRATE 6000  // (mm/min)
@@ -2154,7 +2154,7 @@
  * Requires NOZZLE_PARK_FEATURE.
  * This feature is required for the default FILAMENT_RUNOUT_SCRIPT.
  */
-//#define ADVANCED_PAUSE_FEATURE
+#define ADVANCED_PAUSE_FEATURE
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
   #define PAUSE_PARK_RETRACT_FEEDRATE         60  // (mm/s) Initial retract feedrate.
   #define PAUSE_PARK_RETRACT_LENGTH            2  // (mm) Initial retract.
@@ -2688,7 +2688,7 @@
    * Enable M122 debugging command for TMC stepper drivers.
    * M122 S0/1 will enable continous reporting.
    */
-  //#define TMC_DEBUG
+  #define TMC_DEBUG
 
   /**
    * You can set your own advanced settings by filling in predefined functions.
@@ -3143,6 +3143,16 @@
 #endif
 
 /**
+ * Synchronous Laser Control with M106/M107
+ *
+ * By default M106 / M107 applies the new fan speed immediately. This is fine
+ * for fans, but unsuitable for a PWM/TTL laser attached to the fan header.
+ *
+ * NOTE: This option sacrifices some cooling fan speed options.
+ */
+//#define LASER_SYNCHRONOUS_M106_M107
+
+/**
  * Coolant Control
  *
  * Add the M7, M8, and M9 commands to turn mist or flood coolant on and off.
@@ -3339,7 +3349,7 @@
 /**
  * User-defined menu items that execute custom GCode
  */
-//#define CUSTOM_USER_MENUS
+#define CUSTOM_USER_MENUS
 #if ENABLED(CUSTOM_USER_MENUS)
   //#define CUSTOM_USER_MENU_TITLE "Custom Commands"
   #define USER_SCRIPT_DONE "M117 User Script Done"

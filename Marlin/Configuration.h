@@ -72,7 +72,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Vancity.exe" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -112,7 +112,7 @@
  * Currently Ethernet (-2) is only supported on Teensy 4.1 boards.
  * :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT_2 3
+//#define SERIAL_PORT_2 -1
 
 /**
  * This setting determines the communication speed of the printer.
@@ -1623,12 +1623,12 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 185
+#define PREHEAT_1_TEMP_HOTEND 190
 #define PREHEAT_1_TEMP_BED     45
 #define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
-#define PREHEAT_2_LABEL       "ABS"
-#define PREHEAT_2_TEMP_HOTEND 240
+#define PREHEAT_2_LABEL       "PETG"
+#define PREHEAT_2_TEMP_HOTEND 220
 #define PREHEAT_2_TEMP_BED     70
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
 
@@ -1643,7 +1643,7 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-//#define NOZZLE_PARK_FEATURE
+#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
@@ -2426,10 +2426,6 @@
 //#define TFT_CLASSIC_UI
 //#define TFT_COLOR_UI
 //#define TFT_LVGL_UI
-
-#if ENABLED(TFT_LVGL_UI)
-  //#define MKS_WIFI_MODULE  // MKS WiFi module
-#endif
 
 /**
  * TFT Rotation. Set to one of the following values:
