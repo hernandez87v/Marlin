@@ -69,7 +69,7 @@ hotend_pid_t;
   typedef IF<(LPQ_MAX_LEN > 255), uint16_t, uint8_t>::type lpq_ptr_t;
 #endif
 
-#define PID_PARAM(F,H) _PID_##F(TERN(PID_PARAMS_PER_HOTEND, H, 0))
+#define PID_PARAM(F,H) _PID_##F(TERN(PID_PARAMS_PER_HOTEND, H, 0 & H)) // Always use 'H' to suppress warning
 #define _PID_Kp(H) TERN(PIDTEMP, Temperature::temp_hotend[H].pid.Kp, NAN)
 #define _PID_Ki(H) TERN(PIDTEMP, Temperature::temp_hotend[H].pid.Ki, NAN)
 #define _PID_Kd(H) TERN(PIDTEMP, Temperature::temp_hotend[H].pid.Kd, NAN)
@@ -696,7 +696,7 @@ class Temperature {
 
         static bool wait_for_chamber(const bool no_wait_for_cooling=true);
       #endif
-    #endif // HAS_TEMP_CHAMBER
+    #endif
 
     #if WATCH_CHAMBER
       static void start_watching_chamber();
@@ -715,7 +715,7 @@ class Temperature {
         ;
         start_watching_chamber();
       }
-    #endif // HAS_HEATED_CHAMBER
+    #endif
 
     /**
      * The software PWM power for a heater
