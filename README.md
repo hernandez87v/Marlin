@@ -5,9 +5,10 @@ Will update whenever I have time but more than likely when major exciting new ch
 
 # How to install on your E3V2
 
-- download the firmware-2021xxxx-xxxxxx.bin found int the root of repo
+- download the firmware-2021xxxx-xxxxxx.bin found in the root of repo
 - put into SD Card from printer
 - make sure printer is off and insert the SD CARD
+- turn on printer
 - screen will be black for a bit and auto install update
 - your printer should be updated
 
