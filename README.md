@@ -1,9 +1,13 @@
 # Ender 3 v2 firmware compiled from Marlin 2.0 Bugfix Branch
 
-Mostly stock firmware for the Ender 3 V2 with minor changes like bed 230x230mm.
+Mostly stock firmware for the Ender 3 V2 with minor changes.
 Will update whenever I have time but more than likely when major exciting new changes happen.
 
-# How to install on your E3V2
+- Stock E3V2
+- Mainboard V4.2.2 (The one the printer came with)
+- No BL Touch
+
+# Ender 3 V2 Firmware Update: How to Update/Install Marlin
 
 - download the firmware-2021xxxx-xxxxxx.bin found in the root of repo
 - put into SD Card from printer
